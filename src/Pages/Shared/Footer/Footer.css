@@ -8,3 +8,8 @@
 .social-icon:hover {
   color: #2ecc71;
 }
+.gym-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
