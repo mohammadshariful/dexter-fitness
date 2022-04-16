@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home/Home/Home";
+import NotFound from "./Pages/NotFound/NotFound";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Header from "./Pages/Shared/Header/Header";
 
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>
