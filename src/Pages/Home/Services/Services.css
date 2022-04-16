@@ -1,0 +1,8 @@
+.section-title::after {
+  content: "";
+  background-color: #2ecc71;
+  display: block;
+  width: 180px;
+  height: 2px;
+  margin: 10px auto 5px;
+}
