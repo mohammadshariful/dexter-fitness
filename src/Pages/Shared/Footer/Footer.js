@@ -75,14 +75,14 @@ const Footer = () => {
                     <li>
                       <FaArrowRight className="primary-color" />
                       <span className="ms-2">Services</span>
-                      <li>
-                        <FaArrowRight className="primary-color" />
-                        <span className="ms-2">Cases</span>
-                      </li>
-                      <li>
-                        <FaArrowRight className="primary-color" />
-                        <span className="ms-2">Blog</span>
-                      </li>
+                    </li>
+                    <li>
+                      <FaArrowRight className="primary-color" />
+                      <span className="ms-2">Cases</span>
+                    </li>
+                    <li>
+                      <FaArrowRight className="primary-color" />
+                      <span className="ms-2">Blog</span>
                     </li>
                   </ul>
                 </Col>
@@ -95,10 +95,10 @@ const Footer = () => {
                     <li>
                       <FaArrowRight className="primary-color" />
                       <span className="ms-2">Contacts</span>
-                      <li>
-                        <FaArrowRight className="primary-color" />
-                        <span className="ms-2">Appointment</span>
-                      </li>
+                    </li>
+                    <li>
+                      <FaArrowRight className="primary-color" />
+                      <span className="ms-2">Appointment</span>
                     </li>
                   </ul>
                 </Col>

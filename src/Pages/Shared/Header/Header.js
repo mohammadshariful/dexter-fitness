@@ -13,7 +13,6 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto justify-content-center align-items-center">
-            <CustomLink to="/services">Services</CustomLink>
             <CustomLink to="/blogs">Blogs</CustomLink>
             <CustomLink to="/login">Login</CustomLink>
             <CustomLink to="/signup">Sign Up</CustomLink>
