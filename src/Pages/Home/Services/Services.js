@@ -1,17 +1,23 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
+import usePackage from "../../../Hooks/usePackage";
+import Loading from "../../Shared/Loading/Loading";
 import Service from "../Service/Service";
 import "./Services.css";
 const Services = () => {
-  const array = [1, 2, 3, 4, 5, 6];
+  const { packages, loading } = usePackage();
   return (
     <Container>
       <h2 className="section-title text-center">Services</h2>
-      <Row className="justify-content-center align-items-center my-5">
-        {array.map((arr, index) => (
-          <Service key={index} />
-        ))}
-      </Row>
+      {loading ? (
+        <Loading />
+      ) : (
+        <Row className="justify-content-center align-items-center my-4">
+          {packages.map((service) => (
+            <Service key={service._id} service={service} />
+          ))}
+        </Row>
+      )}
     </Container>
   );
 };

@@ -1,0 +1,38 @@
+.service-container {
+  position: relative;
+}
+.img-container {
+  border-radius: 5px;
+  overflow: hidden;
+}
+.img-container img {
+  transition: 0.3s ease-in-out;
+}
+.img-container:hover img {
+  transform: scale(1.2);
+}
+.service-container h3 {
+  padding-top: 10px;
+}
+.service-info h2 {
+  padding-bottom: 35px;
+}
+.service-btn {
+  position: absolute;
+  border: 0;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  color: #f0f8ff;
+  background-color: #8d3daf;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.service-btn:hover {
+  background-color: #8d3dafd2;
+}

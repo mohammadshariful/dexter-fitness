@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "625b94ea46bba5839df0f4e6",
+    "picture": "https://i.ibb.co/mqLRbG1/strength.jpg",
+    "name": "Strength",
+    "description": "No matter your age or athletic ability, strength training is the key to flexibility, mobility, improved performance and lower injury risk.",
+    "price": "70"
+  },
+  {
+    "_id": "625b94ea7b2c31d17056ad1b",
+    "picture": "https://i.ibb.co/5R0tVWB/body-build.jpg",
+    "name": "Body Build",
+    "description": "Whether your fitness goal is to gain mass, lose fat, or improve your overall health, Body Builders Gym has all the equipment you need for a successful workout. ",
+    "price": "65"
+  },
+  {
+    "_id": "625b94ea77227ccde8481cf0",
+    "picture": "https://i.ibb.co/sgRK8SN/weight-loss.jpg",
+    "name": "Weight Loss",
+    "description": " If you want to implement interval training into your fitness routine to rev up your metabolism, here are the best exercises for weight loss.",
+    "price": "68"
+  },
+  {
+    "_id": "625b94eadc72fc0e3cbfbf7a",
+    "picture": "https://i.ibb.co/pyyw6dr/cardio.jpg",
+    "name": "Cardio",
+    "description": "Cardio exercise, which is sometimes referred to as aerobic exercise, is any rhythmic activity that raises your heart rate into your target heart rate zone.",
+    "price": "70"
+  }
+]

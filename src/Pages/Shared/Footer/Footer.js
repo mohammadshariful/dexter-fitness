@@ -23,9 +23,8 @@ const Footer = () => {
             <div className=" bg-dark text-white">
               <img src={Logo} alt="" />
               <p>
-                Our company leads the industry in wealth management. We provide
-                independent RIA and broker services that are powered by over 20
-                years of industry experience.
+                I have provided this services.If you want to know more please
+                contact us.
               </p>
               <p>
                 <span>Free Consultation</span>
