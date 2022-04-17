@@ -12,9 +12,7 @@ const Blogs = () => {
         </h4>
         <div className="px-3">
           <img className="blog-img img-fluid" src="" alt="" />
-          <p className="text-start my-3">
-            <h1>authoraization</h1>
-          </p>
+          <p className="text-start my-3">authoraization</p>
         </div>
         <div className="d-flex align-items-center px-3">
           <img className="author-img" src="" alt="" />
@@ -39,9 +37,7 @@ const Blogs = () => {
         </h4>
         <div className="px-3">
           <img className="blog-img img-fluid" src="{semanticTagImg}" alt="" />
-          <p className="text-start my-3">
-            <h1>implement of firebase</h1>
-          </p>
+          <p className="text-start my-3">implement of firebase</p>
         </div>
         <div className="d-flex align-items-center px-3">
           <img className="author-img" src="{authorImg}" alt="" />
@@ -66,9 +62,7 @@ const Blogs = () => {
         </h4>
         <div className="px-3">
           <img className="blog-img img-fluid" src="{blockInlineImg}" alt="" />
-          <p className="text-start my-3">
-            <h1>firebase services</h1>
-          </p>
+          <p className="text-start my-3">firebase services</p>
         </div>
         <div className="d-flex align-items-center px-3">
           <img className="author-img" src="{authorImg}" alt="" />

@@ -1,0 +1,15 @@
+.social-group {
+  border: 0;
+  background-color: transparent;
+  margin: 10px 6px;
+}
+.social-group span {
+  margin-left: 4px;
+  font-weight: 500;
+}
+.centerLine {
+  width: 90%;
+  height: 2px;
+  margin: 0 20px;
+  background-color: #808080a6;
+}
