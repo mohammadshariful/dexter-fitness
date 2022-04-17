@@ -21,15 +21,14 @@ const Login = () => {
   const { email, password, handleEmail, handlePassword } = useStateHandle();
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  const [sendPasswordResetEmail, sending, error1] =
-    useSendPasswordResetEmail(auth);
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   useEffect(() => {
     if (user) {
       navigate(from, { replace: true });
     }
   }, [user]);
 
-  if (loading) {
+  if (loading || sending) {
     return <Loading />;
   }
   const handleFormSubmit = (event) => {

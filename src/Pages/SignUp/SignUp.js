@@ -3,6 +3,7 @@ import { Container, Form } from "react-bootstrap";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { FaEnvelope, FaLock, FaUser } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import signUpImg from "../../Assets/Images/login-signup/siignup.jpg";
 import auth from "../../Firebase/Firebase.init";
 import useStateHandle from "../../Hooks/useStateHandle";
@@ -33,11 +34,12 @@ const SignUp = () => {
   if (loading) {
     return <Loading />;
   }
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
     const emailValue = email.value;
     const passwordValue = password.value;
-    createUserWithEmailAndPassword(emailValue, passwordValue);
+    await createUserWithEmailAndPassword(emailValue, passwordValue);
+    await toast.success("new user created");
   };
   return (
     <Container className="my-5">
