@@ -1,0 +1,15 @@
+.blog {
+  margin: 20px 0;
+}
+.blog-img {
+  width: 800px;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+.author-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
