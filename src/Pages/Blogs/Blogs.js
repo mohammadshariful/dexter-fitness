@@ -2,7 +2,11 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { FaComment, FaThumbsUp } from "react-icons/fa";
 import author from "../../Assets/Images/author-img.jpg";
+import authenticationVsAuthoraization from "../../Assets/Images/blogs/authorization vs authentication.png";
+import firebase from "../../Assets/Images/blogs/firebase.png";
+import firebaseServices from "../../Assets/Images/blogs/usesFirebase.jpeg";
 import "./Blogs.css";
+
 const Blogs = () => {
   return (
     <Container className=" my-5 p-3">
@@ -11,7 +15,11 @@ const Blogs = () => {
           Title :Difference between authorization and authentication
         </h4>
         <div className="px-3">
-          <img className="blog-img img-fluid" src="" alt="" />
+          <img
+            className="blog-img img-fluid"
+            src={authenticationVsAuthoraization}
+            alt=""
+          />
           <p className="text-start my-3">authoraization</p>
         </div>
         <div className="d-flex align-items-center px-3">
@@ -36,7 +44,7 @@ const Blogs = () => {
           implement authentication?
         </h4>
         <div className="px-3">
-          <img className="blog-img img-fluid" src="{semanticTagImg}" alt="" />
+          <img className="blog-img img-fluid" src={firebase} alt="" />
           <p className="text-start my-3">implement of firebase</p>
         </div>
         <div className="d-flex align-items-center px-3">
@@ -61,7 +69,7 @@ const Blogs = () => {
           authentication?
         </h4>
         <div className="px-3">
-          <img className="blog-img img-fluid" src="{blockInlineImg}" alt="" />
+          <img className="blog-img img-fluid" src={firebaseServices} alt="" />
           <p className="text-start my-3">firebase services</p>
         </div>
         <div className="d-flex align-items-center px-3">

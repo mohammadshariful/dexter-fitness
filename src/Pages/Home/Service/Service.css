@@ -1,6 +1,9 @@
 .service-container {
   position: relative;
 }
+.service-container:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 .img-container {
   border-radius: 5px;
   overflow: hidden;

@@ -1,3 +1,6 @@
+.footer-container {
+  background-color: #273036;
+}
 .social-icon {
   font-size: 24px;
   margin: 0 10px;
@@ -12,4 +15,9 @@
   width: 80px;
   height: 80px;
   object-fit: cover;
+}
+@media only screen and (max-width: 576px) {
+  .footer-container {
+    height: 100%;
+  }
 }

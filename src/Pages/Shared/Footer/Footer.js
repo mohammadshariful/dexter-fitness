@@ -16,11 +16,11 @@ const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
   return (
-    <footer className="footer-container bg-dark py-3">
+    <footer className="footer-container  py-3">
       <Container>
         <Row className="justify-content-center align-items-center mt-5">
           <Col lg={3}>
-            <div className=" bg-dark text-white">
+            <div className="text-white">
               <img src={Logo} alt="" />
               <p>
                 I have provided this services.If you want to know more please
@@ -33,7 +33,7 @@ const Footer = () => {
             </div>
           </Col>
           <Col lg={3} className="mb-2">
-            <div className="bg-dark text-white">
+            <div className="text-white">
               <h3>Recent Posts</h3>
               <Row>
                 <Col>
@@ -62,7 +62,7 @@ const Footer = () => {
             </div>
           </Col>
           <Col lg={3}>
-            <div className="bg-dark text-white">
+            <div className="text-white">
               <h3>Quick Link</h3>
               <Row>
                 <Col>
@@ -105,7 +105,7 @@ const Footer = () => {
             </div>
           </Col>
           <Col lg={3}>
-            <div className=" bg-dark text-white">
+            <div className="text-white">
               <h3>Contact</h3>
               <ul className="list-unstyled">
                 <li className="mb-2">
@@ -126,7 +126,7 @@ const Footer = () => {
         </Row>
         <hr className="bg-white" />
         <div className="d-flex justify-content-between align-items-center flex-column-reverse flex-md-row">
-          <p className="fs-6 bg-dark text-white">
+          <p className="fs-6  text-white">
             <small>&copy;</small> {year}
             <span className="primary-color"> Dexter Fitness</span> Made With By
             <span className="primary-color"> Mohammad Shariful</span>

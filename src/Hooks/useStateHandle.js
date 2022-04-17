@@ -23,7 +23,9 @@ const useStateHandle = () => {
   };
   const handlePassword = (event) => {
     const inputPassword = event.target.value;
-    if (inputPassword.length < 7) {
+    if (inputPassword === "") {
+      setPassword({ value: "", error: "Please Provide a Password" });
+    } else if (inputPassword.length < 7) {
       setPassword({ value: "", error: "Password too short" });
     } else if (!/(?=.*[A-Z])/.test(inputPassword)) {
       setPassword({

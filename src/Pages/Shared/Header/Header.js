@@ -10,7 +10,13 @@ const Header = () => {
   const [user] = useAuthState(auth);
 
   return (
-    <Navbar collapseOnSelect sticky="top" expand="lg" bg="dark" variant="dark">
+    <Navbar
+      style={{ backgroundColor: "#273036" }}
+      collapseOnSelect
+      sticky="top"
+      expand="lg"
+      variant="dark"
+    >
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img style={{ width: "150px" }} src={logo} alt="" />
@@ -18,6 +24,7 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto justify-content-center align-items-center">
+            <CustomLink to="/">Home</CustomLink>
             <CustomLink to="/blogs">Blogs</CustomLink>
             {user ? (
               <CustomLink to="/login" onClick={() => signOut(auth)}>

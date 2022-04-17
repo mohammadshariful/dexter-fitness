@@ -10,7 +10,6 @@ import { toast } from "react-toastify";
 import loginImg from "../../Assets/Images/login-signup/login.jpg";
 import auth from "../../Firebase/Firebase.init";
 import useStateHandle from "../../Hooks/useStateHandle";
-import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import "./Login.css";
 const Login = () => {
@@ -19,18 +18,15 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/";
 
   const { email, password, handleEmail, handlePassword } = useStateHandle();
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, user, , error] =
     useSignInWithEmailAndPassword(auth);
-  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
   useEffect(() => {
     if (user) {
       navigate(from, { replace: true });
     }
   }, [user]);
 
-  if (loading || sending) {
-    return <Loading />;
-  }
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const emailValue = email.value;
@@ -42,9 +38,13 @@ const Login = () => {
     const emailValue = email.value;
     if (emailValue) {
       sendPasswordResetEmail(emailValue);
-      toast.success("Email sent");
+      toast.success("Email sent", {
+        position: toast.POSITION.TOP_CENTER,
+      });
     } else {
-      toast.error("Please enter Email");
+      toast.error("Please enter Email", {
+        position: toast.POSITION.TOP_CENTER,
+      });
     }
   };
 
@@ -55,7 +55,9 @@ const Login = () => {
           <img className="img-fluid" src={loginImg} alt="" />
         </div>
         <div className="form-container">
-          <h2 className="text-center primary-color pb-2">Log In</h2>
+          <h2 className="text-center primary-color pb-2 section-title">
+            Log In
+          </h2>
           <Form onSubmit={handleFormSubmit}>
             <Form.Group className="mb-3 form-group" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
@@ -69,7 +71,7 @@ const Login = () => {
                 <FaEnvelope />
               </div>
             </Form.Group>
-
+            {email?.error && <p className="error">{email.error}</p>}
             <Form.Group
               className="mb-3 form-group"
               controlId="formBasicPassword"
@@ -85,6 +87,7 @@ const Login = () => {
                 <FaLock />
               </div>
             </Form.Group>
+            {password?.error && <p className="error">{password.error}</p>}
             {error && <p className="error">{error.message}</p>}
             <button className="sign-login-btn">Log In</button>
           </Form>

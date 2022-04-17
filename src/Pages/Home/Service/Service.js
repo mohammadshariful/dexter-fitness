@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Service.css";
 const Service = ({ service }) => {
   const navigate = useNavigate();
-  const { picture, name, price, description } = service;
+  const { _id, picture, name, price, description } = service;
   return (
     <Col md={6} lg={4}>
       <Card className="mb-4 service-container">
@@ -20,7 +20,7 @@ const Service = ({ service }) => {
               <small>/per month.</small>
             </h2>
             <button
-              onClick={() => navigate("/checkout")}
+              onClick={() => navigate(`checkout/${_id}`)}
               className="service-btn"
               type="button"
             >

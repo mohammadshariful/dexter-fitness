@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 import signUpImg from "../../Assets/Images/login-signup/siignup.jpg";
 import auth from "../../Firebase/Firebase.init";
 import useStateHandle from "../../Hooks/useStateHandle";
-import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import "./SignUp.css";
 const SignUp = () => {
@@ -22,24 +21,27 @@ const SignUp = () => {
     handlePassword,
     handleConfirmPassword,
   } = useStateHandle();
-  const [createUserWithEmailAndPassword, user, loading, error] =
+  const [createUserWithEmailAndPassword, user, , error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   useEffect(() => {
     if (user) {
+      toast.success("new user created", {
+        position: toast.POSITION.TOP_CENTER,
+      });
       navigate("/");
     }
   }, [user]);
 
-  if (loading) {
-    return <Loading />;
-  }
-  const handleFormSubmit = async (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
     const emailValue = email.value;
     const passwordValue = password.value;
-    await createUserWithEmailAndPassword(emailValue, passwordValue);
-    await toast.success("new user created");
+    const confirmPasswordValue = confirmPassword.value;
+
+    if (passwordValue === confirmPasswordValue) {
+      createUserWithEmailAndPassword(emailValue, passwordValue);
+    }
   };
   return (
     <Container className="my-5">
@@ -48,7 +50,9 @@ const SignUp = () => {
           <img className="img-fluid" src={signUpImg} alt="" />
         </div>
         <div className="form-container">
-          <h2 className="text-center primary-color pb-2">Create an Account</h2>
+          <h2 className="text-center primary-color pb-2 section-title">
+            Create an Account
+          </h2>
           <Form onSubmit={handleFormSubmit}>
             <Form.Group className="mb-3 form-group" controlId="formBasicName">
               <Form.Label>Your Name</Form.Label>
