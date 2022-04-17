@@ -1,8 +1,12 @@
 import React, { useEffect } from "react";
 import { Container, Form } from "react-bootstrap";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import loginImg from "../../Assets/Images/login-signup/login.jpg";
 import auth from "../../Firebase/Firebase.init";
 import useStateHandle from "../../Hooks/useStateHandle";
@@ -17,6 +21,8 @@ const Login = () => {
   const { email, password, handleEmail, handlePassword } = useStateHandle();
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail, sending, error1] =
+    useSendPasswordResetEmail(auth);
   useEffect(() => {
     if (user) {
       navigate(from, { replace: true });
@@ -31,6 +37,16 @@ const Login = () => {
     const emailValue = email.value;
     const passwordValue = password.value;
     signInWithEmailAndPassword(emailValue, passwordValue);
+  };
+
+  const forgetPasswordHandle = () => {
+    const emailValue = email.value;
+    if (emailValue) {
+      sendPasswordResetEmail(emailValue);
+      toast.success("Email sent");
+    } else {
+      toast.error("Please enter Email");
+    }
   };
 
   return (
@@ -73,7 +89,11 @@ const Login = () => {
             {error && <p className="error">{error.message}</p>}
             <button className="sign-login-btn">Log In</button>
           </Form>
-          <p style={{ cursor: "pointer" }} className="text-end my-2 fw-bold">
+          <p
+            onClick={forgetPasswordHandle}
+            style={{ cursor: "pointer" }}
+            className="text-end text-primary my-2 fw-bold"
+          >
             Forget your password?
           </p>
           <SocialLogin />
