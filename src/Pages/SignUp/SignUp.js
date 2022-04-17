@@ -22,13 +22,14 @@ const SignUp = () => {
     handleConfirmPassword,
   } = useStateHandle();
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   useEffect(() => {
     if (user) {
       navigate("/");
     }
   }, [user]);
+
   if (loading) {
     return <Loading />;
   }
@@ -106,6 +107,7 @@ const SignUp = () => {
             {confirmPassword?.error && (
               <p className="error">{confirmPassword.error}</p>
             )}
+            {error && <p className="error">{error.message}</p>}
             <button className="sign-login-btn">Sign Up</button>
           </Form>
           <SocialLogin />
