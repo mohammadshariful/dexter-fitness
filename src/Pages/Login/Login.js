@@ -1,12 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Form } from "react-bootstrap";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { FaEnvelope, FaLock } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../../Assets/Images/login-signup/login.jpg";
+import auth from "../../Firebase/Firebase.init";
+import useStateHandle from "../../Hooks/useStateHandle";
+import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import "./Login.css";
-
 const Login = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+
+  const { email, password, handleEmail, handlePassword } = useStateHandle();
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user]);
+
+  if (loading) {
+    return <Loading />;
+  }
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    const emailValue = email.value;
+    const passwordValue = password.value;
+    signInWithEmailAndPassword(emailValue, passwordValue);
+  };
+
   return (
     <Container className="my-5">
       <div className="d-flex justify-content-between flex-column flex-md-row">
@@ -15,10 +41,15 @@ const Login = () => {
         </div>
         <div className="form-container">
           <h2 className="text-center primary-color pb-2">Log In</h2>
-          <Form>
+          <Form onSubmit={handleFormSubmit}>
             <Form.Group className="mb-3 form-group" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Control
+                onBlur={handleEmail}
+                type="email"
+                placeholder="Enter email"
+                required
+              />
               <div className="icon">
                 <FaEnvelope />
               </div>
@@ -29,11 +60,17 @@ const Login = () => {
               controlId="formBasicPassword"
             >
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control
+                onBlur={handlePassword}
+                type="password"
+                placeholder="Password"
+                required
+              />
               <div className="icon">
                 <FaLock />
               </div>
             </Form.Group>
+            {error && <p className="error">{error.message}</p>}
             <button className="sign-login-btn">Log In</button>
           </Form>
           <p style={{ cursor: "pointer" }} className="text-end my-2 fw-bold">
@@ -41,7 +78,7 @@ const Login = () => {
           </p>
           <SocialLogin />
           <p>
-            New user to Dexter fitness?{" "}
+            New user to Dexter fitness?
             <Link style={{ textDecoration: "none" }} to="/signup">
               Sign Up
             </Link>
