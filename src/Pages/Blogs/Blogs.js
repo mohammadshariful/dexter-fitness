@@ -1,8 +1,8 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { FaComment, FaThumbsUp } from "react-icons/fa";
+import author from "../../Assets/Images/author-img.jpg";
 import "./Blogs.css";
-
 const Blogs = () => {
   return (
     <Container className=" my-5 p-3">
@@ -15,7 +15,7 @@ const Blogs = () => {
           <p className="text-start my-3">authoraization</p>
         </div>
         <div className="d-flex align-items-center px-3">
-          <img className="author-img" src="" alt="" />
+          <img className="author-img" src={author} alt="" />
           <h6 className="ms-2">Mohammad Shariful</h6>
         </div>
         <div className="d-flex align-items-center justify-content-between">
@@ -40,7 +40,7 @@ const Blogs = () => {
           <p className="text-start my-3">implement of firebase</p>
         </div>
         <div className="d-flex align-items-center px-3">
-          <img className="author-img" src="{authorImg}" alt="" />
+          <img className="author-img" src={author} alt="" />
           <h6 className="ms-2">Mohammad Shariful</h6>
         </div>
         <div className="d-flex align-items-center justify-content-between">
@@ -65,7 +65,7 @@ const Blogs = () => {
           <p className="text-start my-3">firebase services</p>
         </div>
         <div className="d-flex align-items-center px-3">
-          <img className="author-img" src="{authorImg}" alt="" />
+          <img className="author-img" src={author} alt="" />
           <h6 className="ms-2">Mohammad Shariful</h6>
         </div>
         <div className="d-flex align-items-center justify-content-between">
