@@ -1,14 +1,14 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import aboutImg from "../../Assets/Images/placeholderImg.jpeg";
+import sharifulImg from "../../Assets/Images/shariful.jpg";
 import "./About.css";
 const About = () => {
   return (
     <Container className="my-5">
       <div className="about-img-container mb-4">
-        <img className="img-fluid" src={aboutImg} alt="" />
+        <img className="img-fluid" src={sharifulImg} alt="" />
       </div>
-      <h2 className="section-title text-center">About ME</h2>
+      <h2 className="section-title text-center">About of Shariful</h2>
       <div className="text-center">
         <h3>My Goal & How to Achievement</h3>
         <p className="w-75 mx-auto">

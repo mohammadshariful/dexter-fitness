@@ -19,5 +19,12 @@
     "name": "Weight Loss",
     "description": " If you want to implement interval training into your fitness routine to rev up your metabolism, here are the best exercises for weight loss.",
     "price": "68"
+  },
+  {
+    "_id": "625b94eadc72fc0e3cbfbf7a",
+    "picture": "https://i.ibb.co/pyyw6dr/cardio.jpg",
+    "name": "Cardio",
+    "description": "Cardio exercise, which is sometimes referred to as aerobic exercise, is any rhythmic activity that raises your heart rate into your target heart rate zone.",
+    "price": "70"
   }
 ]
