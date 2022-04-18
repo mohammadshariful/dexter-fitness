@@ -1,0 +1,32 @@
+.about-img-container {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.about-img-container img {
+  width: 100%;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+@media only screen and (max-width: 576px) {
+  .about-img-container {
+    width: 100%;
+  }
+  .about-img-container img {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 992px) {
+  .about-img-container {
+    width: 100%;
+  }
+  .about-img-container img {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+  }
+}

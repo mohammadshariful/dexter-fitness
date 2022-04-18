@@ -16,6 +16,10 @@
   height: 80px;
   object-fit: cover;
 }
+ul li:hover {
+  cursor: pointer;
+  color: #2ecc71;
+}
 @media only screen and (max-width: 576px) {
   .footer-container {
     height: 100%;

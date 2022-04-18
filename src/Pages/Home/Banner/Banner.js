@@ -1,6 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Banner.css";
 const Banner = () => {
+  const navigate = useNavigate();
+
+  const handleBtn = () => {
+    navigate("/login");
+  };
   return (
     <section className="banner-container">
       <div className="banner-wraper">
@@ -11,10 +17,10 @@ const Banner = () => {
             training in the palm of your hand.
           </p>
           <div className="btn-container">
-            <button type="button" className="btn-link">
+            <button onClick={handleBtn} type="button" className="btn-link">
               Get Started
             </button>
-            <button type="button" className="btn-link">
+            <button onClick={handleBtn} type="button" className="btn-link">
               Learn More
             </button>
           </div>

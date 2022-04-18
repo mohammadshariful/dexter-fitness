@@ -24,7 +24,7 @@ const Footer = () => {
               <img src={Logo} alt="" />
               <p>
                 I have provided this services.If you want to know more please
-                contact us.
+                contact me.
               </p>
               <p>
                 <span>Free Consultation</span>
@@ -89,7 +89,7 @@ const Footer = () => {
                   <ul className="list-unstyled">
                     <li>
                       <FaArrowRight className="primary-color" />
-                      <span className="ms-2">About us</span>
+                      <span className="ms-2">About</span>
                     </li>
                     <li>
                       <FaArrowRight className="primary-color" />
@@ -129,6 +129,7 @@ const Footer = () => {
           <p className="fs-6  text-white">
             <small>&copy;</small> {year}
             <span className="primary-color"> Dexter Fitness</span> Made With By
+            &hearts;
             <span className="primary-color"> Mohammad Shariful</span>
           </p>
           <div className="mb-2">
